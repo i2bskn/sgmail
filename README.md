@@ -1,1 +1,5 @@
 # sgmail
+
+```go
+sgmail.SendSimpleMail
+```

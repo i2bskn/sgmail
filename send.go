@@ -12,5 +12,10 @@ func SendSimpleMail(params *Params) error {
 	if params.HasCategory() {
 		m.AddCategories(params.Category)
 	}
-	return nil
+	personalization := mail.NewPersonalization()
+	personalization.AddTos(mail.NewEmail(params.ToName, params.ToEmail))
+	m.AddPersonalizations(personalization)
+
+	_, err := MailClient.SendGridClient.Send(m)
+	return err
 }

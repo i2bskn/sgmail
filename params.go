@@ -15,6 +15,8 @@ type Params struct {
 	Category    string
 	FromName    string
 	FromEmail   string
+	ToName      string
+	ToEmail     string
 }
 
 func NewParams() *Params {
